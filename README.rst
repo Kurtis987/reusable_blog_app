@@ -9,11 +9,12 @@ Detailed documentation is in the "docs" directory.
 Quick start
 -----------
  
-1. Add 'reusable_blog' to your INSTALLED_APPS setting like this::
+1. Add 'reusable_blog' and 'disqus' to your INSTALLED_APPS setting like this::
  
     INSTALLED_APPS = (
         ...
         'reusable_blog',
+	'disqus'
     )
  
 2. Include the polls URLconf in your project urls.py like this::
@@ -28,4 +29,11 @@ Quick start
 5. Add a link to the blog in the base.html
 	<li><a href="/blog/">Our Blog</a></li>
  
-6. Visit http://127.0.0.1:8000/blog/ to view the blogs you create.
+6. Sign up to Disqus and create a new application: 
+https://disqus.com/api/applications/register/ 
+
+7. Add the following two entries to settings.py where ‘yourshortname’ is the app name you registered with disqus and the site id matches the one in your django_site db table.
+DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
+SITE_ID = 1
+
+8. Visit http://127.0.0.1:8000/blog/ to view the blogs you create.
